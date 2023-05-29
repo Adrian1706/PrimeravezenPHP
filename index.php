@@ -15,4 +15,10 @@
     define("PI", 3.1416); /** Constante numerica */
     edfine("SALUDO", "Hola Mundo!"); /** Constante de texto */
     define("ES_VALIDO", true); /** constante boolean */
+
+    $logueado = true; /** Boolean */
+    $numero = 200; /** Enteros */
+    $float = 200.5; /** Floats */
+    $nombre = "Adrian"; /** Strings */
+    $array = []; /** Arrays */
 ?>
