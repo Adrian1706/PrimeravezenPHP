@@ -26,26 +26,26 @@
     $numero2 = 30;
     $numero3 = 30;
     $numero4 = "30";
-
-    var_dump($numero1 > $numero2);
+     /** el var_dump es para imprimir algo con sus caracteristicas, ej: si es string y cuando caracteres tiene, su es int, etc... */
+    var_dump($numero1 > $numero2);/** en este caso estamos comparando si el numero 1 es mayor que el 2 */
     echo "<br/>";
 
-    var_dump($numero1 < $numero2);
+    var_dump($numero1 < $numero2);/** aqui es inverso, estamos comparando si el numero 2 es mayor al 1 */
     echo "<br/>";
 
-    var_dump($numero1 >= $numero2);
+    var_dump($numero1 >= $numero2); /** en este caso estamos diciendo si el numero 1 es mayor o igual que el 2 */
     echo "<br/>";
 
-    var_dump($numero1 <= $numero2);
+    var_dump($numero1 <= $numero2); /** aqui es al contrario, estamos diciendo si el numero 2 es mayor o igual al numero 1 */
     echo "<br/>";
 
-    var_dump($numero2 == $numero3);
+    var_dump($numero2 == $numero3); /** en este caso esta diciendo si el numero 2 y el 3 son iguales en valores */
     echo "<br/>";
 
     var_dump($numero2 == $numero4);
     echo "<br/>";
 
-    var_dump($numero2 === $numero4);
+    var_dump($numero2 === $numero4); /** aqui estamos comparando si el numero 2 es igual en valor y en su caracteristica(string, int o float) */
     echo "<br/>";
 
     var_dump($numero1 <=> $numero2);
