@@ -164,4 +164,30 @@
     $resultado = array_diff($array1, $array2);
 
     print_r($resultado);
+
+    /** array_push(): Agrega uno o más elementos al final de un array. */
+    $pila = array("naranja", "plátano");
+    array_push($pila, "manzana", "arándano");
+    print_r($pila);
+
+    /** array_pop(): Extrae y elimina el último elemento de un array. */
+    $stack = array("naranja", "plátano", "manzana", "frambuesa");
+    $fruit = array_pop($stack);
+    print_r($stack);
+
+    /** array_reverse(): Revierte el orden de los elementos en un array. */
+    $input  = array("php", 4.0, array("verde", "rojo"));
+    $reversed = array_reverse($input);
+    $preserved = array_reverse($input, true);
+
+    print_r($input);
+    print_r($reversed);
+    print_r($preserved);
+
+    /** array_sum(): Devuelve la suma de todos los valores de un array numérico. */
+    $a = array(2, 4, 6, 8);
+    echo "sum(a) = " . array_sum($a) . "\n";
+
+    $b = array("a" => 1.2, "b" => 2.3, "c" => 3.4);
+    echo "sum(b) = " . array_sum($b) . "\n";
 ?>
