@@ -190,4 +190,50 @@
 
     $b = array("a" => 1.2, "b" => 2.3, "c" => 3.4);
     echo "sum(b) = " . array_sum($b) . "\n";
+
+    /** array_product(): Devuelve el producto de todos los valores de un array numérico. */
+    $a = array(2, 4, 6, 8);
+    echo "product(a) = " . array_product($a) . "\n";
+    echo "product(array()) = " . array_product(array()) . "\n";
+
+    /** array_chunk(): Divide un array en fragmentos más pequeños. */
+    $input_array = array('a', 'b', 'c', 'd', 'e');
+    print_r(array_chunk($input_array, 2));
+    print_r(array_chunk($input_array, 2, true));
+
+    /** array_keys(): Devuelve todas las claves de un array. */
+    $array = array(0 => 100, "color" => "red");
+    print_r(array_keys($array));
+
+    $array = array("blue", "red", "green", "blue", "blue");
+    print_r(array_keys($array, "blue"));
+
+    $array = array("color" => array("blue", "red", "green"),
+    "size"  => array("small", "medium", "large"));
+    print_r(array_keys($array));
+
+    /** array_values(): Devuelve todos los valores de un array. */
+    $array = array("size" => "XL", "color" => "gold");
+    print_r(array_values($array));
+
+    /** array_walk(): Aplica una función de devolución de llamada a cada elemento de un array. */
+    $fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+
+    function test_alter(&$item1, $key, $prefix)
+    {
+        $item1 = "$prefix: $item1";
+    }
+
+    function test_print($item2, $key)
+    {
+        echo "$key. $item2\n";
+    }
+
+    echo "Before ...:\n";
+    array_walk($fruits, 'test_print');
+
+    array_walk($fruits, 'test_alter', 'fruit');
+    echo "... and after:\n";
+
+    array_walk($fruits, 'test_print');
 ?>
