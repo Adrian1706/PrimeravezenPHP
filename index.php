@@ -217,23 +217,89 @@
     print_r(array_values($array));
 
     /** array_walk(): Aplica una función de devolución de llamada a cada elemento de un array. */
-    $fruits = array("d" => "lemon", "a" => "orange", "b" => "banana", "c" => "apple");
+    $fruits = array("d" => "limon", "a" => "naranja", "b" => "banano", "c" => "manzana");
 
     function test_alter(&$item1, $key, $prefix)
     {
         $item1 = "$prefix: $item1";
     }
+    array_walk($fruits, 'test_print');
 
-    function test_print($item2, $key)
-    {
-        echo "$key. $item2\n";
+    /** El isset verifica si una variable tiene un valor, si tiene valor devuelve un true si no devuelve false y si no esta definida devuelve null */
+
+    $name="Adrian";
+    if(isset($nombre)){
+        print_r($nombre);
+    }else{
+        echo "No existe"
     }
 
-    echo "Before ...:\n";
-    array_walk($fruits, 'test_print');
+    /** el empty verifica si una variable no esta vacia, a diferencia entre el isset y este es que el empty verifica si una variable esta vacia o si su valor es un false y el isset es para saber si esta definida y no es null */
 
-    array_walk($fruits, 'test_alter', 'fruit');
-    echo "... and after:\n";
+    $name="Adrian";
+    if(empty($nombre)){
+        print_r(true);
+    }else{
+        print_r(false);
+    }
 
-    array_walk($fruits, 'test_print');
+    /** Estructuras de control */
+    $numero=5
+    if($numero<6){ /** If quiere decir en español si lo cual en este caso estamos poniendo una condicion, la cual dice en este caso que si el numero es menor a 6 va a dar como resultado el echo que sale debajo */
+        echo "es menor"
+    }
+    else if($numero=5){ /** else if quiere decir en español si no y ponemos la condicion que si el numero entonces es igual a 5 va a dar el echo que sale debajo */
+        echo "es igual"
+    }
+    else{ /** else quiere decir que si no se cumple nada de lo anterior entonces de como resultado el echo que sale debajo */
+        echo "es mayor"
+    }
+    
+    /**----------------------------------------------------------- */
+    $opcion = 2;
+
+    switch ($opcion) { /** El switch se utiliza para realizar selecciones multiples basadas en el valor de una expresion o variable */
+    case 1: /** si la opcion es 1 imprime lo que dice el echo de debajo */
+        echo "Has seleccionado la opción 1";
+        break;
+    case 2: /** si la opcion es 2 imprime lo que dice el echo de debajo */
+        echo "Has seleccionado la opción 2";
+        break;
+    case 3: /** si la opcion es 3 imprime lo que dice el echo de debajo */
+        echo "Has seleccionado la opción 3";
+        break;
+    default: /** si no es ninguna imprime el echo de debajo */
+        echo "Opción inválida";
+        break;
+    }
+
+    /** Estructuras repetitivas */
+
+    $contador = 1;
+
+    while ($contador <= 5) { /** esto quiere decir que cuando el contador sea menor a 5 el ciclo se estara recorriendo */
+        echo "El contador es: " . $contador . "<br>";
+        $contador++;
+    }
+
+    /**---------------------------------------------------------- */
+
+    $contador = 1;
+
+    do { /** el do da una orden inmediata para hacer cumpliendose lo que dice el while de debajo */
+        echo "El contador es: " . $contador . "\n";
+        $contador++; 
+    } while ($contador <= 5); /** esto quiere decir que cuando el contador sea menor a 5 el ciclo se estara recorriendo */
+
+    /**---------------------------------------------------------- */
+
+    $colores = array("rojo", "azul", "verde");
+
+    foreach ($colores as $color) { /** el foreach es una clase de bucle en la cual empieza a recorrer todos los elementos dentro de un array y en este caso los imprime */
+        echo $color . "<br>";
+    }
+
+    /** Funciones */
+
+    
 ?>
